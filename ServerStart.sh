@@ -115,18 +115,6 @@ apt-get install -y -v -t bookworm-backports openjdk-21-jdk
 
 echo "[INFO] Verificando versão do Java..."
 java -version | tee -a "$LOGFILE"
-#if [ "$JAVA_VERSION_INSTALLED" != "$JDK_EXPECTED_VERSION" ]; then
-#    wget -q -v --show-progress -O /tmp/jdk21.tar.gz "$JDK_URL"
-#    mkdir -p /opt/java
-#    tar -xzf /tmp/jdk21.tar.gz -C /opt/java
-#    JDK_FOLDER=$(tar -tf /tmp/jdk21.tar.gz | head -1 | cut -f1 -d"/")
-#    mv "/opt/java/$JDK_FOLDER" /opt/java/java-21
-
-#    update-alternatives --install /usr/bin/java java /opt/java/java-21/bin/java 1
-#    update-alternatives --install /usr/bin/javac javac /opt/java/java-21/bin/javac 1
-#    update-alternatives --set java /opt/java/java-21/bin/java
-#    update-alternatives --set javac /opt/java/java-21/bin/javac
-#fi
 
 # Instalar htop se disponível
 if apt-cache show htop &>/dev/null && ! dpkg -s htop &>/dev/null; then
