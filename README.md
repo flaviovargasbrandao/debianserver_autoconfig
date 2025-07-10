@@ -1,2 +1,2 @@
 # debianserver_autoconfig
-debian auto config for java server
+debian 12 auto config for java server 
